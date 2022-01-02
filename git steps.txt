@@ -301,3 +301,113 @@ $ git stash clear
 lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
 $ git stash pop
 No stash entries found.
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ git add start.txt
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        git steps.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ git stash
+No local changes to save
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ git stash pop
+No stash entries found.
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ git remote add gittutor https://github.com/gautamsbaghel/git_tutorial.git
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ git remote -v
+gittutor        https://github.com/gautamsbaghel/git_tutorial.git (fetch)
+gittutor        https://github.com/gautamsbaghel/git_tutorial.git (push)
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ git push gittutor master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 237 bytes | 118.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/gautamsbaghel/git_tutorial.git
+ * [new branch]      master -> master
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ touch hotel.txt
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ git add .
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ git commit -m "hotel.txt added"
+[master be0801f] hotel.txt added
+ 2 files changed, 303 insertions(+)
+ create mode 100644 git steps.txt
+ create mode 100644 hotel.txt
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ touch rollno.txt
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ git add .
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ git commit -m "rollno.txt added"
+[master 3196312] rollno.txt added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 rollno.txt
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ vi rollno.txt
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   rollno.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ git add .
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ git commit -m "rollno.txt modified"
+[master 2a82b24] rollno.txt modified
+ 1 file changed, 1 insertion(+)
+
+lenovo@DESKTOP-7Q6K332 MINGW64 ~/p1 (master)
+$ git log
+commit 2a82b244565762593725e7c3360d728bf6776eff (HEAD -> master)
+Author: gautamsbaghel <baghelgautam2001@gmail.com>
+Date:   Sun Jan 2 19:12:16 2022 +0530
+
+    rollno.txt modified
+
+commit 3196312cbeae4d22fb73f6bfcaed042a2676ae6d
+Author: gautamsbaghel <baghelgautam2001@gmail.com>
+Date:   Sun Jan 2 19:10:23 2022 +0530
+
+    rollno.txt added
+
+commit be0801f1cfeb5f3704d22a42ca88e66265bac080
+Author: gautamsbaghel <baghelgautam2001@gmail.com>
+Date:   Sun Jan 2 19:09:52 2022 +0530
+
+    hotel.txt added
+
+commit fb3dbf02ba805c85dceef6cf645aad43ac411a55 (gittutor/master)
+Author: gautamsbaghel <baghelgautam2001@gmail.com>
+Date:   Sat Jan 1 21:07:56 2022 +0530
+
+    practice commit
+(END)
